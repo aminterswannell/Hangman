@@ -17,10 +17,10 @@ class Hangman:
             print(f"Good guess! {guess} is in the word.")
             self.num_letters -= 1
             print(self.num_letters)
-            for char in self.word:
+            for i, char in enumerate(self.word):
                 if char == guess:
-                    i = self.word.index(char)
                     self.word_guessed[i] = char
+            print(self.word_guessed)
         else:
             self.num_lives -= 1
             print(f"Unlucky! {guess} is not in the word.")
