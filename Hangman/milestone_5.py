@@ -14,7 +14,7 @@ class Hangman:
     def check_guess(self, guess):
         guess.lower()
         if guess in self.word:
-            print(f"Good guess! {guess} is in the word.")
+            print(f'Good guess! {guess} is in the word.')
             self.num_letters -= 1
             print(self.num_letters)
             for i, char in enumerate(self.word):
@@ -23,19 +23,19 @@ class Hangman:
             print(self.word_guessed)
         else:
             self.num_lives -= 1
-            print(f"Unlucky! {guess} is not in the word.")
-            print(f"You have {self.num_lives} lives left")
+            print(f'Unlucky! {guess} is not in the word.')
+            print(f'You have {self.num_lives} lives left')
         
 
     def ask_for_input(self):
         while True:
-            guess = input("Guess a letter:")
+            guess = input('Guess a letter:')
             print(self.word_guessed)
             if guess.isalpha() == False or len(guess) != 1:
-                print("invalid letter. Please enter a single alphabetical character.")
+                print('invalid letter. Please enter a single alphabetical character.')
                 break
             elif guess in self.list_of_guesses:
-                print("You already tried that letter!")
+                print('You already tried that letter!')
                 break
             else:
                 self.list_of_guesses.append(guess)
@@ -47,12 +47,12 @@ def play_game(word_list):
     game = Hangman(word_list, num_lives)
     while True:
         if game.num_lives == 0:
-            print("You lost!")
+            print('You lost!')
             break
         elif game.num_letters > 0:
              game.ask_for_input()
         elif game.num_lives > 0 and game.num_letters == 0:
-            print("Congratulations! You've won!")
+            print('Congratulations! You\'ve won!')
             break
 
             
