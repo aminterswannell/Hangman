@@ -33,22 +33,27 @@ class Hangman:
             print(self.word_guessed)
             if guess.isalpha() == False or len(guess) != 1:
                 print("invalid letter. Please enter a single alphabetical character.")
+                break
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
+                break
             else:
                 self.list_of_guesses.append(guess)
-            print(self.check_guess(guess))
+        print(self.check_guess(guess))
+        
+            
+
 
 def play_game(word_list):
     num_lives = 5
     game = Hangman(word_list, num_lives)
     while True:
-        if num_lives == 0:
+        if game.num_lives == 0:
             print("You lost!")
             break
         elif game.num_letters > 0:
-            return game.ask_for_input()
-        elif num_lives > 0 and game.num_letters == 0:
+             game.ask_for_input()
+        elif game.num_lives > 0 and game.num_letters == 0:
             print("Congratulations! You've won!")
             break
 
