@@ -39,11 +39,9 @@ class Hangman:
                 break
             else:
                 self.list_of_guesses.append(guess)
-        print(self.check_guess(guess))
-        
-            
-
-
+                self.check_guess(guess)
+                break
+    
 def play_game(word_list):
     num_lives = 5
     game = Hangman(word_list, num_lives)
