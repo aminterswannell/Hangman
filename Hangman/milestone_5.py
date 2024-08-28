@@ -35,7 +35,7 @@ class Hangman:
         prints to tell the user their guess was unsuccessful,
         prints to tell the user how many lives they have remaining.
         """
-        guess.lower()
+        guess = guess.lower()
         if guess in self.word:
             print(f'Good guess! {guess} is in the word.')
             self.num_letters -= 1
@@ -106,7 +106,7 @@ def play_game(word_list):
             print('Congratulations! You\'ve won!')
             break
 
-            
-game_1 = Hangman(word_list)
-play_game(word_list)
+if __name__ == "__main__":         
+   game_1 = Hangman(word_list)
+   play_game(word_list)
 
